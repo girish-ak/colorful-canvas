@@ -9,14 +9,24 @@ body{
 #scorebox{
     position: fixed;
     color: #00cc66;
-    font-size: 32px;
+    font-size: 26px;
     margin-top: 25px;
     margin-left: 25px;
     user-select: none;
     font-family: 'Monoton', cursive;
 }
 
-#track{
+#highscore{
+    position: fixed;
+    color: #00cc66;
+    font-size: 26px;
+    margin-top: 65px;
+    margin-left: 25px;
+    user-select: none;
+    font-family: 'Monoton', cursive;
+}
+
+#track,#trackhigh{
     margin-left: 10px;
     color: white;
 }
@@ -45,7 +55,4 @@ body{
     user-select: none;
     margin-top: 25px;
     transform: scale(0.6);
-
-
-    /* Other styles here */
 }

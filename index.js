@@ -7,6 +7,7 @@ bgm.volume = 0.35
 const canvas = document.querySelector('canvas') //to select canvas tag in hrml
 const contxt = canvas.getContext('2d') // specifing dimensions and invoke canvas api
 const scorebox = document.querySelector('#track') //displaying increased score
+const highscore = document.querySelector('#trackhigh')
 
 canvas.width = innerWidth //to acquire full width of browser
 canvas.height = innerHeight // similar
@@ -236,6 +237,11 @@ function animate() {
 
                     score += 100
                     scorebox.innerHTML = score
+                    if (score > hiscoreval) {
+                        hiscoreval = score;
+                        localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+                        highscore.innerHTML = hiscoreval;
+                    }
 
                     //gsap library is used to improve shrinking effect
                     gsap.to(enemy, {
@@ -250,6 +256,11 @@ function animate() {
                     //increase score
                     score += 300
                     scorebox.innerHTML = score
+                    if (score > hiscoreval) {
+                        hiscoreval = score;
+                        localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+                        highscore.innerHTML = hiscoreval;
+                    }
                     setTimeout(() => {
                         boom.play()
                         enemies.splice(e_index, 1)
@@ -280,6 +291,16 @@ addEventListener('click', (event) => {
 })
 
 //game loop
+let hiscore = localStorage.getItem("hiscore");
+if (hiscore === null) {
+	hiscoreval = 0;
+	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+}
+else {
+	hiscoreval = JSON.parse(hiscore);
+	highscore.innerHTML = hiscore;
+}
+
 window.onload = function() {
     document.getElementById("bgm").volume = 0.35;
     document.getElementById("bgm").play();
