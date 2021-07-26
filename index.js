@@ -1,9 +1,9 @@
 const boom = new Audio("./sounds/boom.wav")
 const bgm = new Audio("./sounds/bg.mp3")
 const gameover = new Audio("./sounds/gameover.wav")
-bgm.volume = 0.5
+bgm.volume = 0.25
 boom.volume = 0.3
-gameover.volume = 0.75
+gameover.volume = 0.5
 const canvas = document.querySelector('canvas') //to select canvas tag in hrml
 const contxt = canvas.getContext('2d') // specifing dimensions and invoke canvas api
 const scorebox = document.querySelector('#track') //displaying increased score
