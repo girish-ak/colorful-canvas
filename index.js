@@ -115,7 +115,7 @@ function changeIcon() {
     if (soundImage.getAttribute('src') === "./images/mute.png") {
         soundImage.setAttribute('src', "./images/volume.png");
         bgm.play()
-        
+
     }
     else {
         soundImage.setAttribute('src', "./images/mute.png");
@@ -144,7 +144,7 @@ function enemyspawn() {
 
     setInterval(() => {
 
-        const radius = Math.random() * (45 - 12) + 12
+        const radius = Math.random() * (65 - 3) + 3
         let x
         let y
         //randomising spawn positions
@@ -293,15 +293,15 @@ addEventListener('click', (event) => {
 //game loop
 let hiscore = localStorage.getItem("hiscore");
 if (hiscore === null) {
-	hiscoreval = 0;
-	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+    hiscoreval = 0;
+    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
 }
 else {
-	hiscoreval = JSON.parse(hiscore);
-	highscore.innerHTML = hiscore;
+    hiscoreval = JSON.parse(hiscore);
+    highscore.innerHTML = hiscore;
 }
 
-window.onload = function() {
+window.onload = function () {
     document.getElementById("bgm").volume = 0.35;
     document.getElementById("bgm").play();
 }
