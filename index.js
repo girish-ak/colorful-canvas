@@ -208,9 +208,9 @@ function animate() {
         const pdistance = Math.hypot(player.x - enemy.x, player.y - enemy.y)
         //when enemy colliodes core
         if (pdistance - enemy.radius - player.radius < 1) {
+            gameover.play()
             cancelAnimationFrame(frame_id) //stops at that frame
             bgm.pause()
-            gameover.play()
             scorebox.innerHTML = score
             alert("Game Over!!   Your Score is  " + score + "\npress space to restart! ");
 
