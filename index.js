@@ -115,7 +115,7 @@ function changeIcon() {
     if (soundImage.getAttribute('src') === "./images/mute.png") {
         soundImage.setAttribute('src', "./images/volume.png");
         bgm.play()
-
+        
     }
     else {
         soundImage.setAttribute('src', "./images/mute.png");
@@ -131,7 +131,7 @@ let player = new Player(a, b, 15, 'white')
 let projectiles = []
 let enemies = []
 let particles = []
-let spawntime = 1000
+let spawntime = 1100
 let frame_id
 let score = 0
 
@@ -144,7 +144,7 @@ function enemyspawn() {
 
     setInterval(() => {
 
-        const radius = Math.random() * (65 - 3) + 3
+        const radius = Math.random() * (65 - 5) + 5
         let x
         let y
         //randomising spawn positions
@@ -237,10 +237,10 @@ function animate() {
 
                     score += 100
                     scorebox.innerHTML = score
-                    if (score > hiscorevalue) {
-                        hiscorevalue = score;
-                        localStorage.setItem("highscore", JSON.stringify(hiscoreval));
-                        highscore.innerHTML = hiscorevalue;
+                    if (score > hiscoreval) {
+                        hiscoreval = score;
+                        localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+                        highscore.innerHTML = hiscoreval;
                     }
 
                     //gsap library is used to improve shrinking effect
@@ -291,19 +291,14 @@ addEventListener('click', (event) => {
 })
 
 //game loop
-let highscore = localStorage.getItem("highscore");
-if (highscore === null) {
-    hiscorevalue = 0;
-    localStorage.setItem("highscore", JSON.stringify(hiscorevalue))
+let hiscore = localStorage.getItem("hiscore");
+if (hiscore === null) {
+	hiscoreval = 0;
+	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
 }
 else {
-    hiscorevalue = JSON.parse(highscore);
-    highscore.innerHTML = highscore;
-}
-
-window.onload = function () {
-    document.getElementById("bgm").volume = 0.35;
-    document.getElementById("bgm").play();
+	hiscoreval = JSON.parse(hiscore);
+	highscore.innerHTML = hiscore;
 }
 
 animate()
