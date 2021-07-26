@@ -131,7 +131,7 @@ let player = new Player(a, b, 15, 'white')
 let projectiles = []
 let enemies = []
 let particles = []
-let spawntime = 1150
+let spawntime = 1000
 let frame_id
 let score = 0
 
