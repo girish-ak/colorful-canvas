@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
+body{
+    margin: 0;
+    position: fixed;
+}
+
+#scorebox{
+    position: fixed;
+    color: #00cc66;
+    font-size: 32px;
+    margin-top: 25px;
+    margin-left: 25px;
+    user-select: none;
+    font-family: 'Monoton', cursive;
+}
+
+span{
+    margin-left: 10px;
+    color: white;
+}
