@@ -237,10 +237,10 @@ function animate() {
 
                     score += 100
                     scorebox.innerHTML = score
-                    if (score > hiscoreval) {
-                        hiscoreval = score;
-                        localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
-                        highscore.innerHTML = hiscoreval;
+                    if (score > hiscorevalue) {
+                        hiscorevalue = score;
+                        localStorage.setItem("highscore", JSON.stringify(hiscoreval));
+                        highscore.innerHTML = hiscorevalue;
                     }
 
                     //gsap library is used to improve shrinking effect
@@ -291,14 +291,14 @@ addEventListener('click', (event) => {
 })
 
 //game loop
-let hiscore = localStorage.getItem("hiscore");
-if (hiscore === null) {
-    hiscoreval = 0;
-    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+let highscore = localStorage.getItem("highscore");
+if (highscore === null) {
+    hiscorevalue = 0;
+    localStorage.setItem("highscore", JSON.stringify(hiscorevalue))
 }
 else {
-    hiscoreval = JSON.parse(hiscore);
-    highscore.innerHTML = hiscore;
+    hiscorevalue = JSON.parse(highscore);
+    highscore.innerHTML = highscore;
 }
 
 window.onload = function () {
