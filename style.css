@@ -16,7 +16,34 @@ body{
     font-family: 'Monoton', cursive;
 }
 
-span{
+#track{
     margin-left: 10px;
     color: white;
+}
+
+#button1{
+
+    background: none;
+    height: 65px;
+    width: 65px;
+    display: block;
+    position: absolute; 
+    right: 25px;
+    margin-top: 25px;
+    border: none;
+}
+
+
+#soundImage{
+    background: no-repeat;
+    height: 65px;
+    width: 65px;
+    display: block;
+    position: absolute; 
+    right: 25px;
+    margin-top: 25px;
+    transform: scale(0.6);
+
+
+    /* Other styles here */
 }

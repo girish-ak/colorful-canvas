@@ -1,9 +1,9 @@
 const boom = new Audio("./sounds/boom.wav")
-const bgm = new Audio("./sounds/bg.mp3")
 const gameover = new Audio("./sounds/gameover.wav")
-bgm.volume = 0.25
+const bgm = new Audio("./sounds/bg.mp3")
 boom.volume = 0.3
 gameover.volume = 0.5
+bgm.volume = 0.35
 const canvas = document.querySelector('canvas') //to select canvas tag in hrml
 const contxt = canvas.getContext('2d') // specifing dimensions and invoke canvas api
 const scorebox = document.querySelector('#track') //displaying increased score
@@ -105,6 +105,24 @@ class Particle {                                  //new instances of particles
         this.alpha -= 0.01              //fading and disappearing of particles
     }
 }
+
+let soundImage = document.getElementById("soundImage");
+let button1 = document.getElementById("button1");
+
+function changeIcon() {
+
+    if (soundImage.getAttribute('src') === "./images/mute.png") {
+        soundImage.setAttribute('src', "./images/volume.png");
+        bgm.play()
+        
+    }
+    else {
+        soundImage.setAttribute('src', "./images/mute.png");
+        bgm.pause()
+    }
+}
+
+button1.addEventListener("click", changeIcon);
 
 //variable initialisation
 
@@ -262,7 +280,11 @@ addEventListener('click', (event) => {
 })
 
 //game loop
-bgm.play()
+window.onload = function() {
+    document.getElementById("bgm").volume = 0.35;
+    document.getElementById("bgm").play();
+}
+
 animate()
 enemyspawn()
 
