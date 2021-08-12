@@ -56,3 +56,16 @@ body{
     margin-top: 25px;
     transform: scale(0.6);
 }
+
+a{
+    position: fixed;
+    user-select: none;
+    text-decoration: none;
+    color:whitesmoke;
+    font-size: 30px;
+    font-weight:500;
+    margin-top: 600px;
+    margin-left: 1250px;
+    user-select: none;
+    font-family: 'Monoton', cursive;
+}

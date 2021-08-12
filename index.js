@@ -115,7 +115,7 @@ function changeIcon() {
     if (soundImage.getAttribute('src') === "./images/mute.png") {
         soundImage.setAttribute('src', "./images/volume.png");
         bgm.play()
-        
+
     }
     else {
         soundImage.setAttribute('src', "./images/mute.png");
@@ -293,12 +293,12 @@ addEventListener('click', (event) => {
 //game loop
 let hiscore = localStorage.getItem("hiscore");
 if (hiscore === null) {
-	hiscoreval = 0;
-	localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+    hiscoreval = 0;
+    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
 }
 else {
-	hiscoreval = JSON.parse(hiscore);
-	highscore.innerHTML = hiscore;
+    hiscoreval = JSON.parse(hiscore);
+    highscore.innerHTML = hiscore;
 }
 
 animate()
